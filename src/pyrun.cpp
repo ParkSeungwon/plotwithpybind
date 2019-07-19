@@ -45,9 +45,19 @@ int main()
 	py::object plot = plt.attr("plot");
 	py::object show = plt.attr("show");
 	py::object scatter = plt.attr("scatter");
+	py::object xlabel = plt.attr("xlabel");
+	py::object ylabel = plt.attr("ylabel");
+	py::object subplot = plt.attr("subplot");
+	py::object figure = plt.attr("figure");
+
 //	plot(a, b, "color"_a = "green");
-	plot(nx, ny, "color"_a = "green");
+	figure(1);
+	subplot(211);
+	plot(nx, ny, "--", "color"_a = "green");
+	subplot(212);
 	scatter(nx, ny);
+	xlabel("xlim");
+	ylabel("this");
 	show();
 }
 
