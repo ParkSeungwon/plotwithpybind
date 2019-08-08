@@ -31,8 +31,6 @@ std::valarray<float> arange(float start, float step, float stop)
 
 int main()
 {
-	py::scoped_interpreter guard{};
-	py::exec("print 'hello'");
 
 //	py::object linspac = py::module::import("numpy").attr("linspace");
 //	py::array a = linspac(1, 100, 300);
@@ -59,5 +57,7 @@ int main()
 	xlabel("xlim");
 	ylabel("this");
 	show();
+	py::scoped_interpreter guard{};
+	py::exec("print 'hello'");
 }
 
